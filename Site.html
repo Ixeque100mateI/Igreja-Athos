@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet"> <!-- Fonte dos Títulos -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400&display=swap" rel="stylesheet"> <!-- Nova fonte para Parágrafos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Igreja Athos PE - Riacho das Almas</title>
+    <style>
+        body {
+            background-color: #000; /* Fundo geral preto */
+            color: #f8f9fa; /* Texto em tom claro */
+        }
+        .navbar, footer {
+            background-color: #343a40; /* Tons de cinza escuro */
+        }
+        .navbar-brand, .nav-link, footer p, footer a {
+            color: #f8f9fa !important; /* Texto em tons claros */
+        }
+        .text-block {
+            background-color: #212529; /* Fundo cinza escuro para blocos de texto */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .carousel-item {
+            height: 80vh; /* Define que a altura do item seja 100% da altura da tela */
+        }
+
+        .carousel-item img {
+            object-fit: cover; /* Cobre o espaço disponível sem distorcer a imagem */
+            height: 100%; /* Faz a imagem preencher a altura da tela */
+        }
+        /* Classe para o título de escrita à mão */
+        .handwriting-title {
+            font-family: 'Sacramento', cursive; /* Aplica a nova fonte */
+            font-size: 3rem; /* Tamanho do texto do título */
+            color: #f8f9fa; /* Cor do texto */
+            text-align: center; /* Centraliza o título */
+            margin-bottom: 20px; /* Espaçamento inferior */
+            letter-spacing: 2px; /* Espaçamento entre letras */
+        }
+        /* Classe para os parágrafos */
+        p {
+            font-family: 'Lora', serif; /* Aplica a nova fonte para parágrafos */
+            font-size: 1.125rem; /* Tamanho do texto do parágrafo */
+            line-height: 1.6; /* Altura da linha para melhor legibilidade */
+            color: #f8f9fa; /* Cor do texto */
+        }
+        /* Estilo dos cards */
+        .card {
+            background-color: #343a40; /* Fundo do cartão */
+            border: none; /* Remove borda */
+            border-radius: 8px; /* Arredondar bordas */
+        }
+        .card-title {
+            color: #f8f9fa; /* Cor do título */
+        }
+        .card-img-top {
+            border-radius: 50%; /* Faz a imagem ficar circular */
+            width: 100px; /* Largura da imagem */
+            height: 100px; /* Altura da imagem */
+            object-fit: cover; /* Cobre o espaço da imagem sem distorcer */
+        }
+        .hidden {
+            display: none;
+        }
+        .hover-pastores {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hover-pastores img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .hover-pastores:hover img {
+            transform: scale(1.1);
+        }
+
+        .hover-pastores:hover {
+            opacity: 1;
+        }
+
+        #team-circle-social {
+            background-color: rgba(0, 0, 0, 0.3); /* Preto com 30% de opacidade */
+            padding: 10px; /* Espaçamento interno opcional */
+            border-radius: 5px; /* Bordas arredondadas opcionais */
+            display: inline-block; /* Faz o fundo se ajustar ao tamanho do conteúdo */
+            width: 25%;
+            margin: 0 auto; /* Centraliza o elemento */
+        }
+        .team-circle-social {
+            list-style-type: none; /* Remove o ponto da lista */
+            padding: 0; /* Remove o espaçamento padrão */
+            margin: 0; /* Remove a margem padrão */
+        }
+
+        .card {
+            transition: transform 0.3s ease; /* Transição suave para o efeito de hover */
+            margin-bottom: 20px; /* Espaçamento entre os cards */
+        }
+
+        .card:hover {
+            transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+        }
+
+        .card-img-top {
+            max-height: 200px; /* Ajuste a altura máxima da imagem conforme necessário */
+            object-fit: cover; /* Faz a imagem cobrir o card */
+        }
+
+        #calendar {
+            background-color: #f8f9fa; /* Cor de fundo suave */
+            padding: 20px; /* Espaçamento interno */
+            border-radius: 8px; /* Bordas arredondadas */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+        }
+
+        .activity {
+            background-color: #ffffff; /* Cor de fundo das atividades */
+            border: 1px solid #ced4da; /* Borda das atividades */
+            border-radius: 5px; /* Bordas arredondadas */
+            padding: 10px; /* Espaçamento interno */
+            margin-bottom: 10px; /* Espaçamento entre atividades */
+            color: #343a40; /* Cor do texto das atividades */
+        }
+
+    </style>
+</head>
+<body>
+
+<!-- Header com Navbar -->
+<header>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">Igreja Athos PE</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#sobre-nos">Sobre Nós</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#missoes">Missões</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#testemunhos">Testemunhos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#pastores">Pastores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#links">Links</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#calendar">Agenda</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#ministerios">Ministérios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#localizacao">Localização</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+<!-- Carrossel de Imagens -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="images/IMG1.jpg" class="d-block w-100 h-100" alt="Imagem do culto de oração">
+        </div>
+        <div class="carousel-item">
+            <img src="images/IMG2.jpg" class="d-block w-100 h-100" alt="Imagem de celebração da igreja">
+        </div>
+        <div class="carousel-item">
+            <img src="images/IMG3.jpg" class="d-block w-100 h-100" alt="Imagem da igreja em Riacho das Almas">
+        </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Anterior</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Próximo</span>
+    </a>
+</div>
+
+<!-- Sobre Nós -->
+<section id="sobre-nos" class="container my-5">
+    <h2 class="handwriting-title">Sobre Nós</h2>
+    <div class="text-block row">
+        <div class="col-md-6">
+            <p class="fs-5 text-muted text-justify lh-lg mb-0" style="text-align: justify; text-indent: 5%;">
+                A Igreja Athos tem como missão transformar vidas através do amor de Deus e dos ensinamentos de Jesus Cristo. Com sedes em São Paulo, Pernambuco, Paraná e Portugal, nossa visão é clara: "Amamos o que Deus ama, pessoas!". Buscamos criar uma comunidade acolhedora onde pessoas de todas as idades e origens possam encontrar apoio, crescimento espiritual e laços significativos.
+            </p>
+            <br>
+            <p class="fs-5 text-muted text-justify lh-lg" style="text-align: justify; text-indent: 5%;">
+                Guiados pela frase "De Embu das Artes para as nações", oferecemos ministérios e eventos que fortalecem a fé e promovem o serviço ao próximo. Acreditamos que cada indivíduo tem um papel importante nessa jornada de expansão do Reino de Deus, e convidamos todos a fazer parte dessa missão transformadora.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <img src="images/Frente.jpg" class="img-fluid w-100 h-100" alt="Entrada da igreja">
+        </div>
+    </div>
+</section>
+
+<!-- Missões -->
+<section id="missoes" class="py-5">
+    <div class="container text-center"> <!-- Adicione text-center para centralizar o conteúdo -->
+        <h2 class="handwriting-title">Missões</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <img src="images/Athos_De_Justica.jpg" class="img-fluid" alt="Athos de Justiça" style="max-height: 50vh; object-fit: cover;"> <!-- Ajuste a altura máxima -->
+            </div>
+            <div class="col-md-8">
+                <p class="fs-5 text-muted text-justify lh-lg" style="text-align: justify; text-indent: 5%;">
+                    O Ministério Athos de Justiça é dedicado a promover a transformação social por meio de ações solidárias que impactam vidas. Buscamos distribuir cestas básicas para famílias em situação de vulnerabilidade, proporcionar dias de beleza que renovam a autoestima e oferecer capacitações profissionais para ajudar na geração de renda. Acreditamos que cada pequena ação pode fazer uma grande diferença, e, por meio de eventos comunitários, estamos comprometidos em levar amor e esperança a todos, contribuindo para um futuro mais justo e igualitário. Junte-se a nós nessa missão de fazer o bem e transformar realidades!
+                </p>    
+            </div>            
+        </div>
+    </div>
+</section>
+
+<!-- Testemunhos -->
+<section id="testemunhos" class="container my-5">
+    <h2 class="handwriting-title">Testemunhos</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="images/Avatar.jpg" class="card-img-top" alt="Testemunho 1">
+                <div class="card-body">
+                    <h5 class="card-title">Nome do Testemunho 1</h5>
+                    <p class="card-text">Uma breve descrição do testemunho. Clique abaixo para saber mais.</p>
+                    <button class="btn btn-primary" onclick="toggleTestemunho('testemunho1')">Ver mais</button>
+                </div>
+                <div class="text-block hidden overflow-auto" id="testemunho1" style="max-height: 200px;">
+                    <p>Aqui está o testemunho completo do primeiro participante. Eles compartilharam sua experiência detalhada.Aqui está o testemunho completo do primeiro participante. Eles compartilharam sua experiência detalhada.Aqui está o testemunho completo do primeiro participante. Eles compartilharam sua experiência detalhada.Aqui está o testemunho completo do primeiro participante. Eles compartilharam sua experiência detalhada.Aqui está o testemunho completo do primeiro participante. Eles compartilharam sua experiência detalhada.Aqui está o testemunho completo do primeiro participante. Eles compartilharam sua experiência detalhada.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="images/Avatar.jpg" class="card-img-top" alt="Testemunho 2">
+                <div class="card-body">
+                    <h5 class="card-title">Nome do Testemunho 2</h5>
+                    <p class="card-text">Uma breve descrição do testemunho. Clique abaixo para saber mais.</p>
+                    <button class="btn btn-primary" onclick="toggleTestemunho('testemunho2')">Ver mais</button>
+                </div>
+                <div class="text-block hidden" id="testemunho2">
+                    <p>Aqui está o testemunho completo do segundo participante. Eles compartilharam sua experiência detalhada.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <img src="images/Avatar.jpg" class="card-img-top" alt="Testemunho 3">
+                <div class="card-body">
+                    <h5 class="card-title">Nome do Testemunho 3</h5>
+                    <p class="card-text">Uma breve descrição do testemunho. Clique abaixo para saber mais.</p>
+                    <button class="btn btn-primary" onclick="toggleTestemunho('testemunho3')">Ver mais</button>
+                </div>
+                <div class="text-block hidden" id="testemunho3">
+                    <p>Aqui está o testemunho completo do terceiro participante. Eles compartilharam sua experiência detalhada.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Pastores -->
+<section id="pastores" class="container my-5">
+    <div class="row">
+        <div class="text-block col-md-5">
+            <h3 class="handwriting-title">Conheça nossos Pastores</h3>
+            <p class="fs-5 text-muted text-justify lh-lg" style="text-align: justify; text-indent: 5%;">
+                Estamos hoje aqui, pela providência de Deus, porque um dia Ele nos chamou e redimiu, usando os meios que Ele mesmo decretou. O Senhor usou John Rockwell Smith e aquele pequeno grupo de pessoas simples para dizer que Jesus é o único caminho que nos conduz ao Pai.
+            </p>
+            <p class="fs-5 text-muted text-justify lh-lg" style="text-align: justify; text-indent: 5%;">
+                Ao Deus soberano, Senhor da história, seja dada toda honra e glória pelos séculos dos séculos!
+            </p>
+        </div>
+        <div class="col-md-7">
+            <div id="pastoresCarousel" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#pastoresCarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#pastoresCarousel" data-bs-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="images/IMG1.jpg" class="d-block w-100 h-100" alt="Pastor Wesley">
+                        <div class="carousel-caption d-none d-md-block" id="team-circle-social">
+                            <h5>Wesley França</h5>
+                            <p>Pastor</p>
+                            <ul class="team-circle-social">
+                                <li>
+                                    <a href="https://www.instagram.com/igrejaathospe?igsh=MWtiOXE2Y3YxdGl4bA==" target="_blank"> <!-- Substitua seu_perfil pelo seu usuário do Instagram -->
+                                        <i class="fab fa-instagram fa-2x"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/Pastora.jpg" class="d-block w-100 h-100" alt="Pastora Bel">
+                        <div class="carousel-caption d-none d-md-block" id="team-circle-social">
+                            <h5>Bel França</h5>
+                            <p>Pastora</p>
+                            <ul class="team-circle-social">
+                                <li>
+                                    <a href="https://www.instagram.com/igrejaathospe?igsh=MWtiOXE2Y3YxdGl4bA==" target="_blank"> <!-- Substitua seu_perfil pelo seu usuário do Instagram -->
+                                        <i class="fab fa-instagram fa-2x"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#pastoresCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                </a>
+                <a class="carousel-control-next" href="#pastoresCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Links -->
+<section id="links" class="container my-5">
+    <h2 class="handwriting-title">Links</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/Link_1.jpg" class="card-img-top" alt="Imagem 1">
+                <div class="card-body">
+                    <h5 class="card-title">On Fire</h5>
+                    <p class="card-text">Descrição do Card 1.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/Link_2.jpg" class="card-img-top" alt="Imagem 2">
+                <div class="card-body">
+                    <h5 class="card-title">Enraizados</h5>
+                    <p class="card-text">Descrição do Card 2.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/Link_3.jpg" class="card-img-top" alt="Imagem 3">
+                <div class="card-body">
+                    <h5 class="card-title">Alcançar</h5>
+                    <p class="card-text">Descrição do Card 3.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/Link_4.jpg" class="card-img-top" alt="Imagem 4">
+                <div class="card-body">
+                    <h5 class="card-title">Over Flow</h5>
+                    <p class="card-text">Descrição do Card 4.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/Link_5.jpg" class="card-img-top" alt="Imagem 5">
+                <div class="card-body">
+                    <h5 class="card-title">Big Wave</h5>
+                    <p class="card-text">Descrição do Card 5.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/Link_6.jpg" class="card-img-top" alt="Imagem 6">
+                <div class="card-body">
+                    <h5 class="card-title">improváveis</h5>
+                    <p class="card-text">Descrição do Card 6.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4"></div> <!-- Coluna vazia para espaçar -->
+        <div class="col-md-4">
+            <div class="card">
+                <img src="images/Avatar.jpg" class="card-img-top" alt="Imagem 7">
+                <div class="card-body">
+                    <h5 class="card-title">Resgate</h5>
+                    <p class="card-text">Descrição do Card 7.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Agenda -->
+<section id="calendar" class="container my-5">
+    <h2 class="handwriting-title" style="color: #000;">Calendário de Atividades</h2>
+    <div class="row" style="color: #000;">
+        <div class="col text-center">
+            <h4>Quinta-feira</h4>
+            <div class="activity">Link Improváveis ás 20 h</div>
+        </div>
+        <div class="col text-center">
+            <h4>Sexta-feira</h4>
+            <div class="activity">Link Alcançar ás 20 h</div>
+            <div class="activity">Culto ás 19 h (Culto de ceia)</div>
+        </div>
+        <div class="col text-center">
+            <h4>Sábado</h4>
+            <div class="activity">Link Enraizados ás 19 h</div>
+            <div class="activity">Link Big Wave ás 19 h</div>
+            <div class="activity">Link Over Flow ás 19 h</div>
+            <div class="activity">Link On Fire ás 19 h</div>
+            <div class="activity">Link Resgate ás 20 h</div>
+        </div>
+        <div class="col text-center">
+            <h4>Domingo</h4>
+            <div class="activity">Culto ás 18 h</div>
+        </div>
+    </div>
+</section>
+
+<!-- Ministérios -->
+<section id="ministerios" class="container my-5">
+    <h2 class="handwriting-title">Ministérios</h2>
+
+</section>
+
+<!-- Localização -->
+<section id="localizacao" class="container my-5">
+    <h2 class="handwriting-title text-center">Localização</h2>
+    <div class="text-block">
+        <p class="fs-5 text-muted text-justify lh-lg" style="text-align: justify; text-indent: 5%;">
+            A Igreja Athos está localizada em Riacho das Almas. Visite-nos e faça parte dessa comunidade acolhedora!
+        </p>
+        <div class="text-center" style="height: 300px;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d246.851400106093!2d-35.859814735592096!3d-8.139867537615823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d-8.139931262091952!2d-35.85982881718981!5e0!3m2!1spt-BR!2sbr!4v1728614826008!5m2!1spt-BR!2sbr" width="70%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- Footer com Contato -->
+<footer class="text-center py-4">
+    <div class="container">
+        <p>&copy; 2024 Igreja Athos PE. Todos os direitos reservados.</p>
+        <p>Contato: <a href="mailto:contato@igrejaathospe.com.br">contato@igrejaathospe.com.br</a> | Telefone: (81) 99999-9999</p>
+        <p>Riacho das Almas - Pernambuco, Brasil</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    function toggleTestemunho(id) {
+        var testemunho = document.getElementById(id);
+        if (testemunho.classList.contains('hidden')) {
+            testemunho.classList.remove('hidden');
+        } else {
+            testemunho.classList.add('hidden');
+        }
+    }
+    </script>
+</body>
+</html>
